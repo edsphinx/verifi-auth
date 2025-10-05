@@ -1,0 +1,74 @@
+// VeriFi Auth - Authentication Database Schema
+// SIWA (Sign In With Aptos) + Passkeys (Phase 2)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ============================================================================
+// AUTHENTICATION MODELS
+// ============================================================================
+
+// User accounts
+model User {
+  id                    String    @id @default(uuid())
+  address               String    @unique
+
+  // Passkey support (Phase 2)
+  passkeyCredentialId   String?   @unique @map("passkey_credential_id")
+  passkeyPublicKey      Bytes?    @map("passkey_public_key")
+
+  createdAt             DateTime  @default(now()) @map("created_at")
+  lastLogin             DateTime? @map("last_login")
+
+  sessions              Session[]
+
+  @@map("users")
+}
+
+// Session management with JWE tokens
+model Session {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  token     String   @unique
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([token])
+  @@index([userId])
+  @@map("sessions")
+}
+
+// Nonce storage for SIWA anti-replay protection
+model Nonce {
+  id        String   @id @default(uuid())
+  nonce     String   @unique
+  used      Boolean  @default(false)
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([nonce])
+  @@index([expiresAt])
+  @@map("nonces")
+}
+
+// Challenge storage for passkey authentication (Phase 2)
+model Challenge {
+  id        String   @id @default(uuid())
+  address   String
+  challenge String
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([address])
+  @@index([expiresAt])
+  @@map("challenges")
+}

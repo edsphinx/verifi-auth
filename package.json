@@ -1,0 +1,45 @@
+{
+  "name": "@verifi/auth",
+  "version": "0.1.0",
+  "description": "VeriFi Authentication - SIWA (Sign In With Aptos) + Passkeys",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "next dev -p 3100",
+    "build": "next build",
+    "start": "next start -p 3100",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "db:migrate": "prisma migrate dev",
+    "db:generate": "prisma generate",
+    "db:studio": "prisma studio",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.32.0",
+    "@aptos-labs/wallet-adapter-react": "^3.11.0",
+    "@prisma/client": "^6.2.1",
+    "jose": "^5.9.6",
+    "next": "^15.5.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.6",
+    "@types/react-dom": "^19.0.3",
+    "prisma": "^6.2.1",
+    "typescript": "^5.7.3"
+  },
+  "keywords": [
+    "aptos",
+    "siwa",
+    "authentication",
+    "web3",
+    "passkeys",
+    "verifi"
+  ],
+  "author": "VeriFi Protocol",
+  "license": "MIT"
+}
