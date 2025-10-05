@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
+import { prisma } from "@/lib/db";
 import { Ed25519PublicKey } from "@aptos-labs/ts-sdk";
 import { EncryptJWT } from "jose";
-import { prisma } from "@/lib/db";
+import { NextResponse } from "next/server";
 
 // JWE uses encryption, providing better security for DeFi applications
 // This key should be 256 bits (32 bytes) for AES-256-GCM
@@ -64,13 +64,13 @@ export async function POST(req: Request) {
 			Buffer.from(signature.replace("0x", ""), "hex"),
 		);
 
-		const isValid = pubKey.verifySignature({ message: messageBytes, signature: signatureBytes });
+		const isValid = pubKey.verifySignature({
+			message: messageBytes,
+			signature: signatureBytes,
+		});
 
 		if (!isValid) {
-			return NextResponse.json(
-				{ error: "Invalid signature" },
-				{ status: 401 },
-			);
+			return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
 		}
 
 		// 4. Mark nonce as used
@@ -138,9 +138,6 @@ export async function POST(req: Request) {
 		return response;
 	} catch (error) {
 		console.error("SIWA verification failed:", error);
-		return NextResponse.json(
-			{ error: "Verification failed" },
-			{ status: 500 },
-		);
+		return NextResponse.json({ error: "Verification failed" }, { status: 500 });
 	}
 }

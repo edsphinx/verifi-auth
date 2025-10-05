@@ -15,9 +15,7 @@ export interface SessionPayload {
  * @param token - The encrypted JWE token
  * @returns The decrypted payload or null if invalid
  */
-export async function verifyJWE(
-	token: string,
-): Promise<SessionPayload | null> {
+export async function verifyJWE(token: string): Promise<SessionPayload | null> {
 	try {
 		const { payload } = await jwtDecrypt(token, JWE_SECRET);
 

@@ -20,8 +20,7 @@ export async function verifyJWE(
 ): Promise<SessionPayload | null> {
 	try {
 		// Get token from cookie if not provided
-		const tokenToVerify =
-			token || (await cookies()).get("auth_token")?.value;
+		const tokenToVerify = token || (await cookies()).get("auth_token")?.value;
 
 		if (!tokenToVerify) {
 			return null;

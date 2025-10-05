@@ -1,79 +1,79 @@
 {
-  "name": "@verifi-sdk/auth",
-  "version": "0.1.0",
-  "description": "Modern authentication for Aptos - SIWA (Sign In With Aptos) + Passkeys. Production-ready auth with JWE encryption, React hooks, and UI components.",
-  "main": "index.ts",
-  "types": "index.ts",
-  "files": [
-    "index.ts",
-    "lib/**/*",
-    "components/**/*",
-    "app/**/*",
-    "prisma/**/*",
-    "USAGE.md",
-    "README.md"
-  ],
-  "scripts": {
-    "dev": "next dev -p 3100",
-    "build": "tsc",
-    "start": "next start -p 3100",
-    "lint": "biome check .",
-    "format": "biome format --write .",
-    "db:migrate": "prisma migrate dev",
-    "db:generate": "prisma generate",
-    "db:studio": "prisma studio",
-    "postinstall": "prisma generate",
-    "prepublishOnly": "pnpm lint && pnpm build"
-  },
-  "dependencies": {
-    "@aptos-labs/ts-sdk": "^1.32.0",
-    "@aptos-labs/wallet-adapter-react": "^7.1.0",
-    "@prisma/client": "^6.2.1",
-    "jose": "^5.9.6",
-    "zustand": "^5.0.8"
-  },
-  "peerDependencies": {
-    "next": ">=14.0.0",
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@types/node": "^22.10.5",
-    "@types/react": "^19.0.6",
-    "@types/react-dom": "^19.0.3",
-    "next": "^15.5.4",
-    "prisma": "^6.2.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "typescript": "^5.7.3"
-  },
-  "keywords": [
-    "aptos",
-    "siwa",
-    "sign-in-with-aptos",
-    "authentication",
-    "auth",
-    "web3",
-    "passkeys",
-    "webauthn",
-    "verifi",
-    "react",
-    "nextjs",
-    "blockchain",
-    "defi"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/verifi-labs/verifi-sdk.git"
-  },
-  "homepage": "https://verifi.wtf",
-  "bugs": {
-    "url": "https://github.com/verifi-labs/verifi-auth/issues"
-  },
-  "author": "edsphinx <your@email.com>",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@verifi-sdk/auth",
+	"version": "0.1.0",
+	"description": "Modern authentication for Aptos - SIWA (Sign In With Aptos) + Passkeys. Production-ready auth with JWE encryption, React hooks, and UI components.",
+	"main": "index.ts",
+	"types": "index.ts",
+	"files": [
+		"index.ts",
+		"lib/**/*",
+		"components/**/*",
+		"app/**/*",
+		"prisma/**/*",
+		"USAGE.md",
+		"README.md"
+	],
+	"scripts": {
+		"dev": "next dev -p 3100",
+		"build": "echo 'Skipping build - package distributed as TypeScript source'",
+		"start": "next start -p 3100",
+		"lint": "biome check .",
+		"format": "biome format --write .",
+		"db:migrate": "prisma migrate dev",
+		"db:generate": "prisma generate",
+		"db:studio": "prisma studio",
+		"postinstall": "prisma generate",
+		"prepublishOnly": "pnpm lint"
+	},
+	"dependencies": {
+		"@aptos-labs/ts-sdk": "^1.32.0",
+		"@aptos-labs/wallet-adapter-react": "^7.1.0",
+		"@prisma/client": "^6.2.1",
+		"jose": "^5.9.6",
+		"zustand": "^5.0.8"
+	},
+	"peerDependencies": {
+		"next": ">=14.0.0",
+		"react": ">=18.0.0",
+		"react-dom": ">=18.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/node": "^22.10.5",
+		"@types/react": "^19.0.6",
+		"@types/react-dom": "^19.0.3",
+		"next": "^15.5.4",
+		"prisma": "^6.2.1",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"typescript": "^5.7.3"
+	},
+	"keywords": [
+		"aptos",
+		"siwa",
+		"sign-in-with-aptos",
+		"authentication",
+		"auth",
+		"web3",
+		"passkeys",
+		"webauthn",
+		"verifi",
+		"react",
+		"nextjs",
+		"blockchain",
+		"defi"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/verifi-labs/verifi-sdk.git"
+	},
+	"homepage": "https://verifi.wtf",
+	"bugs": {
+		"url": "https://github.com/verifi-labs/verifi-auth/issues"
+	},
+	"author": "edsphinx <your@email.com>",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	}
 }

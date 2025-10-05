@@ -38,9 +38,14 @@ export function withOptionalAuth(
 	return async (req: Request) => {
 		const session = await getSessionFromRequest(req);
 
-		return handler(req, session ? {
-			address: session.address,
-			userId: session.userId,
-		} : null);
+		return handler(
+			req,
+			session
+				? {
+						address: session.address,
+						userId: session.userId,
+					}
+				: null,
+		);
 	};
 }
