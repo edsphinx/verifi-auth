@@ -290,4 +290,4 @@ Make sure you're using `credentials: 'include'` in fetch calls and that your coo
 - Add refresh token logic
 - Implement role-based access control (RBAC)
 
-For more examples, see the [GitHub repository](https://github.com/verifi-labs/verifi-sdk).
+For more examples, see the [GitHub repository](https://github.com/edsphinx/verifi-auth).

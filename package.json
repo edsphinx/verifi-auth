@@ -65,11 +65,11 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/verifi-labs/verifi-sdk.git"
+		"url": "https://github.com/edsphinx/verifi-auth.git"
 	},
 	"homepage": "https://verifi.wtf",
 	"bugs": {
-		"url": "https://github.com/verifi-labs/verifi-auth/issues"
+		"url": "https://github.com/edsphinx/verifi-auth/issues"
 	},
 	"author": "edsphinx <your@email.com>",
 	"license": "MIT",

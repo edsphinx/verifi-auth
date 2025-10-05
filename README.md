@@ -5,7 +5,7 @@
 [![npm version](https://img.shields.io/npm/v/@verifi-sdk/auth.svg)](https://www.npmjs.com/package/@verifi-sdk/auth)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-🔗 **[verifi.wtf](https://verifi.wtf)** | 📖 **[Documentation](./USAGE.md)** | 🐛 **[Report Issues](https://github.com/verifi-labs/verifi-sdk/issues)**
+🔗 **[verifi.wtf](https://verifi.wtf)** | 📖 **[Documentation](./USAGE.md)** | 🐛 **[Report Issues](https://github.com/edsphinx/verifi-auth/issues)**
 
 ## Features
 
