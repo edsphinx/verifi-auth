@@ -1,5 +1,5 @@
 /**
- * @verifi/auth - Authentication for Aptos applications
+ * @verifi-sdk/auth - Authentication for Aptos applications
  *
  * Main entry point for the package
  */

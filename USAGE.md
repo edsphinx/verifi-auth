@@ -5,7 +5,7 @@ Complete examples for integrating `@verifi/auth` in your Aptos application.
 ## Installation
 
 ```bash
-pnpm add @verifi/auth zustand
+pnpm add @verifi-sdk/auth zustand
 ```
 
 ## Quick Start
@@ -14,7 +14,7 @@ pnpm add @verifi/auth zustand
 
 ```bash
 # Copy schema to your project
-cp node_modules/@verifi/auth/prisma/schema.prisma ./prisma/
+cp node_modules/@verifi-sdk/auth/prisma/schema.prisma ./prisma/
 
 # Run migrations
 pnpm prisma migrate dev --name add_auth_tables
@@ -37,14 +37,14 @@ NEXT_PUBLIC_APP_DOMAIN="localhost:3000"
 Copy the API routes from the package to your Next.js app:
 
 ```bash
-cp -r node_modules/@verifi/auth/app/api/auth ./app/api/
+cp -r node_modules/@verifi-sdk/auth/app/api/auth ./app/api/
 ```
 
 ### 4. Wrap App with SessionProvider
 
 ```tsx
 // app/layout.tsx
-import { SessionProvider } from '@verifi/auth';
+import { SessionProvider } from '@verifi-sdk/auth';
 import { AptosWalletAdapterProvider } from '@aptos-labs/wallet-adapter-react';
 
 export default function RootLayout({ children }) {
@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
 ### Simple Login Button
 
 ```tsx
-import { LoginButton, WalletLogin } from '@verifi/auth';
+import { LoginButton, WalletLogin } from '@verifi-sdk/auth';
 import { WalletSelector } from '@aptos-labs/wallet-adapter-react';
 
 export function Header() {
@@ -86,7 +86,7 @@ export function Header() {
 ### Protected Route
 
 ```tsx
-import { AuthGuard } from '@verifi/auth';
+import { AuthGuard } from '@verifi-sdk/auth';
 
 export default function ProtectedPage() {
   return (
@@ -102,7 +102,7 @@ export default function ProtectedPage() {
 ```tsx
 'use client';
 
-import { useAuth } from '@verifi/auth';
+import { useAuth } from '@verifi-sdk/auth';
 
 export function ProfileButton() {
   const { isAuthenticated, address, isLoading } = useAuth();
@@ -128,7 +128,7 @@ export function ProfileButton() {
 ```tsx
 'use client';
 
-import { useSIWA } from '@verifi/auth';
+import { useSIWA } from '@verifi-sdk/auth';
 import { useWallet } from '@aptos-labs/wallet-adapter-react';
 
 export function CustomLogin() {
@@ -171,7 +171,7 @@ export function CustomLogin() {
 
 ```tsx
 // app/api/protected/route.ts
-import { withAuth } from '@verifi/auth';
+import { withAuth } from '@verifi-sdk/auth';
 import { NextResponse } from 'next/server';
 
 export const GET = withAuth(async (req, session) => {
@@ -187,7 +187,7 @@ export const GET = withAuth(async (req, session) => {
 
 ```tsx
 // app/api/data/route.ts
-import { withOptionalAuth } from '@verifi/auth';
+import { withOptionalAuth } from '@verifi-sdk/auth';
 import { NextResponse } from 'next/server';
 
 export const GET = withOptionalAuth(async (req, session) => {
@@ -205,7 +205,7 @@ export const GET = withOptionalAuth(async (req, session) => {
 
 ```tsx
 // app/api/custom/route.ts
-import { getSessionFromRequest } from '@verifi/auth';
+import { getSessionFromRequest } from '@verifi-sdk/auth';
 import { NextResponse } from 'next/server';
 
 export async function GET(req: Request) {
@@ -225,7 +225,7 @@ export async function GET(req: Request) {
 ### Custom API URL (for monorepo or microservices)
 
 ```tsx
-import { useSIWA } from '@verifi/auth';
+import { useSIWA } from '@verifi-sdk/auth';
 
 const { signIn } = useSIWA({
   apiUrl: 'https://auth.myapp.com', // Custom auth service URL
@@ -248,7 +248,7 @@ const { signIn } = useSIWA({
 The auth state is automatically persisted to localStorage using Zustand. You can access it directly:
 
 ```tsx
-import { useAuthStore } from '@verifi/auth';
+import { useAuthStore } from '@verifi-sdk/auth';
 
 // Direct store access
 const session = useAuthStore((state) => state.session);
@@ -260,7 +260,7 @@ const setSession = useAuthStore((state) => state.setSession);
 All components and hooks are fully typed:
 
 ```tsx
-import type { AuthSession, SIWAMessage, AuthResponse } from '@verifi/auth';
+import type { AuthSession, SIWAMessage, AuthResponse } from '@verifi-sdk/auth';
 
 const session: AuthSession = {
   address: '0x123...',
@@ -290,4 +290,4 @@ Make sure you're using `credentials: 'include'` in fetch calls and that your coo
 - Add refresh token logic
 - Implement role-based access control (RBAC)
 
-For more examples, see the [GitHub repository](https://github.com/verifi-labs/verifi-auth).
+For more examples, see the [GitHub repository](https://github.com/verifi-labs/verifi-sdk).

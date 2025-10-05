@@ -2,10 +2,10 @@
 
 > Modern authentication for Aptos applications using **Sign In With Aptos (SIWA)** and **Passkeys** (WebAuthn).
 
-[![npm version](https://img.shields.io/npm/v/@verifi/auth.svg)](https://www.npmjs.com/package/@verifi/auth)
+[![npm version](https://img.shields.io/npm/v/@verifi-sdk/auth.svg)](https://www.npmjs.com/package/@verifi-sdk/auth)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-🔗 **[verifi.wtf](https://verifi.wtf)** | 📖 **[Documentation](./USAGE.md)** | 🐛 **[Report Issues](https://github.com/verifi-labs/verifi-auth/issues)**
+🔗 **[verifi.wtf](https://verifi.wtf)** | 📖 **[Documentation](./USAGE.md)** | 🐛 **[Report Issues](https://github.com/verifi-labs/verifi-sdk/issues)**
 
 ## Features
 
