@@ -1,6 +1,11 @@
 # VeriFi Auth
 
-Modern authentication for Web3 applications using **Sign In With Aptos (SIWA)** and **Passkeys** (WebAuthn).
+> Modern authentication for Aptos applications using **Sign In With Aptos (SIWA)** and **Passkeys** (WebAuthn).
+
+[![npm version](https://img.shields.io/npm/v/@verifi/auth.svg)](https://www.npmjs.com/package/@verifi/auth)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+🔗 **[verifi.wtf](https://verifi.wtf)** | 📖 **[Documentation](./USAGE.md)** | 🐛 **[Report Issues](https://github.com/verifi-labs/verifi-auth/issues)**
 
 ## Features
 

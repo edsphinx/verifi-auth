@@ -1,0 +1,22 @@
+# Don't publish these to npm
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.git/
+.gitignore
+tsconfig.json
+next.config.ts
+pnpm-lock.yaml
+
+# Keep these
+!prisma/schema.prisma
+!app/api/**/*
+!lib/**/*
+!components/**/*
+!README.md
+!USAGE.md
+!LICENSE
